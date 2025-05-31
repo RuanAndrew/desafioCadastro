@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
+    Pet pet = new Pet();
     int[] indexPerguntas = {1,2,3,4,5,6};
-    int escolhaUsuario = 0;
+    int escolhaUsuário = 0;
     boolean isRespostaValida = false;
 
     public void mostrarMenu() {
@@ -20,9 +21,9 @@ public class Menu {
                     6. Sair
                     --- --- ---""");
             try {
-                escolhaUsuario = scanner.nextInt();
+                escolhaUsuário = scanner.nextInt();
                 scanner.nextLine();
-                boolean opcaoEncontrada = Arrays.stream(indexPerguntas).anyMatch(i -> i == escolhaUsuario);
+                boolean opcaoEncontrada = Arrays.stream(indexPerguntas).anyMatch(i -> i == escolhaUsuário);
 
                 if (opcaoEncontrada) {
                     opcao();
@@ -39,10 +40,19 @@ public class Menu {
     }
     public void opcao() {
         LeitorArquivos leitorArquivos = new LeitorArquivos();
-        if (escolhaUsuario == 1) {
+        if (escolhaUsuário == 1) {
             System.out.println("--- Cadastro ---");
             leitorArquivos.lerArquivo();
             System.out.println("--- --- ---");
+            pet.cadastrarPet();
+            System.out.println(pet.nome);
+            System.out.println(pet.tipo);
+            System.out.println(pet.sexo);
+            System.out.println(pet.rua);
+            System.out.println(pet.cidade);
+            System.out.println(pet.numero_casa);
+            System.out.println(pet.idade);
+            System.out.println(pet.peso);
         }
     }
 }
