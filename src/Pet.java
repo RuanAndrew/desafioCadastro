@@ -96,7 +96,7 @@ public class Pet {
         if (endereço.split(",").length == 2) {
             this.numero_casa = campoVazio;
             this.cidade = endereço.split(",")[0].strip();
-            this.rua = endereço.split(",")[0].strip();
+            this.rua = endereço.split(",")[1].strip();
 
         } else if (endereço.split(",").length == 3) {
             this.numero_casa = endereço.split(",")[0];
@@ -108,47 +108,41 @@ public class Pet {
     }
 
     public void setIdade(String idade) {
-        if (idade.isEmpty()) {
-            this.idade = campoVazio;
-        }
-
-        idade = idade.replace(",", ".");
-        float parsedIdade;
-
         try {
-            parsedIdade = Float.parseFloat(idade);
+            if (idade.isEmpty()) {
+                this.idade = campoVazio;
+            }else {
+                idade = idade.replace(",", ".");
+                float parsedIdade;
+                parsedIdade = Float.parseFloat(idade);
+                if (parsedIdade > 20) {
+                    throw new IllegalArgumentException("Idade não pode ser maior que 20");
+                }
+                this.idade = Float.toString(parsedIdade);
+            }
         }catch (NumberFormatException e) {
             throw new IllegalArgumentException("Digite um numero");
         }
-        if (parsedIdade < 0) {
-            throw new IllegalArgumentException("Idade não pode ser negativa");
-        }
-        if (parsedIdade > 20) {
-            throw new IllegalArgumentException("Idade não pode ser maior que 20");
-        }
-        this.idade = Float.toString(parsedIdade);
     }
 
     public void setPeso(String peso) {
-        if (peso.isEmpty()) {
-            this.peso = campoVazio;
-        }
-
-        peso = peso.replace(",", ".");
-        float parsedPeso;
-
         try {
-            parsedPeso = Float.parseFloat(peso);
+            if (peso.isEmpty()) {
+                this.peso = campoVazio;
+            }else {
+                peso = peso.replace(",", ".");
+                float parsedPeso = Float.parseFloat(peso);
+                if (parsedPeso < 0.5) {
+                    throw new IllegalArgumentException("Peso não pode ser menor que 0,5 kg");
+                }
+                if (parsedPeso > 60) {
+                    throw new IllegalArgumentException("Peso não pode ser maior que 60 kg");
+                }
+                this.peso = Float.toString(parsedPeso);
+            }
         }catch (NumberFormatException e) {
             throw new IllegalArgumentException("Digite um numero");
         }
-        if (parsedPeso < 0.5) {
-            throw new IllegalArgumentException("Peso não pode ser menor que 0,5 kg");
-        }
-        if (parsedPeso > 60) {
-            throw new IllegalArgumentException("Peso não pode ser maior que 60 kg");
-        }
-        this.peso = Float.toString(parsedPeso);
     }
 
     public void setRaça(String raça) {
