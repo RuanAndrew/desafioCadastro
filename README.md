@@ -9,7 +9,7 @@ Instagram: [@devmagro 📸](https://instagram.com/devmagro)
 YouTube: [@devmagro 🎥](https://www.youtube.com/@devmagro)
 
 ## Introdução
-Você chegou ao **primeiro grande desafio do guia**! 😎 Agora, é hora de colocar a mão na massa e aplicar seus conhecimentos na prática, criando um **Sistema de Adoção para Pets!**
+Você chegou ao **primeiro grande desafio do guia**! 😎 Agora, é hora de colocar a mão na massa e aplicar seus conhecimentos na prática, criando um **Sistema de Adoção para petsCadastrados!**
 
 Leia TODO o desafio com ATENÇÃO antes de começar a faze-lo e respeite as regras, evite o uso do GPT ao máximo e use-o com sabedoria quando necessário!
 ## Objetivo
@@ -82,7 +82,7 @@ O menu deve ser exibido no terminal e o usuário deve poder escolher uma opção
 3. O usuário só poderá digitar números, não podendo digitar letras ou caracteres especiais.
 
 
-## 📍Passo 3: Cadastro de novos Pets 📝
+## 📍Passo 3: Cadastro de novos petsCadastrados 📝
 
 O usuário, ao selecionar a opção 1, deve ser capaz de cadastrar um novo pet.
 Neste momento, você deverá ler as **PERGUNTAS** do arquivo `formulario.txt` e armazenar as respostas em um objeto do tipo `Pet`.

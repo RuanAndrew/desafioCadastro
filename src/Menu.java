@@ -45,14 +45,6 @@ public class Menu {
             leitorArquivos.lerArquivo();
             System.out.println("--- --- ---");
             pet.cadastrarPet();
-            System.out.println(pet.nome);
-            System.out.println(pet.tipo);
-            System.out.println(pet.sexo);
-            System.out.println(pet.rua);
-            System.out.println(pet.cidade);
-            System.out.println(pet.numero_casa);
-            System.out.println(pet.idade);
-            System.out.println(pet.peso);
         }
     }
 }
